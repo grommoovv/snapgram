@@ -1,11 +1,9 @@
+import { useUserContext } from '@/context/auth'
 import { FC } from 'react'
-// import cls from './PrivateLayout.module.scss'
 import { Outlet, Navigate } from 'react-router-dom'
 
-interface PrivateLayoutProps {}
-
-const PrivateLayout: FC = (props) => {
-  const isUserAuthenticated = false
+const PrivateLayout: FC = () => {
+  const { isUserAuthenticated } = useUserContext()
 
   return (
     <>
