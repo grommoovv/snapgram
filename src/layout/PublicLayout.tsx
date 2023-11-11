@@ -1,12 +1,20 @@
 import { FC } from 'react'
-// import cls from './PublicLayout.module.scss'
+import { Bottombar, LeftSidebar, Topbar } from '.'
+import { Outlet } from 'react-router-dom'
 
-interface PublicLayoutProps {}
-
-const PublicLayout: FC = (props) => {
+const PublicLayout: FC = () => {
   return (
     <>
-      <div>PublicLayout</div>
+      <div className='w-full md:flex'>
+        <Topbar />
+        <LeftSidebar />
+
+        <section className='flex flex-1 h-full'>
+          <Outlet />
+        </section>
+
+        <Bottombar />
+      </div>
     </>
   )
 }
