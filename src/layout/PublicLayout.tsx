@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Bottombar, LeftSidebar, Topbar } from '.'
+import { Bottombar, LeftSidebar, RightSidebar, Topbar } from '.'
 import { Outlet } from 'react-router-dom'
 
 const PublicLayout: FC = () => {
@@ -8,11 +8,10 @@ const PublicLayout: FC = () => {
       <div className='w-full md:flex'>
         <Topbar />
         <LeftSidebar />
-
-        <section className='flex flex-1 h-full'>
+        <section className='page-container'>
           <Outlet />
         </section>
-
+        <RightSidebar />
         <Bottombar />
       </div>
     </>
