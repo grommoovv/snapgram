@@ -1,11 +1,11 @@
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 
 import { INavLink } from '@/types'
-import { sidebarLinks } from '@/constants'
+import { sidebarLinks } from '@/lib/constants'
 import { Loader } from '@/components/shared'
 import { Button } from '@/components/ui/button'
 import { useSignOutAccount } from '@/api'
-import { useUserContext, INITIAL_USER } from '@/context/auth'
+import { useUserContext, INITIAL_USER } from '@/lib/context/auth'
 
 const LeftSidebar = () => {
   const navigate = useNavigate()
@@ -29,24 +29,6 @@ const LeftSidebar = () => {
           <img src='/assets/images/logo.svg' alt='logo' width={170} height={36} />
         </Link>
 
-        {isLoading || !user.email ? (
-          <div className='h-14'>
-            <Loader />
-          </div>
-        ) : (
-          <Link to={`/profile/${user.id}`} className='flex gap-3 items-center'>
-            <img
-              src={user.imageUrl || '/assets/icons/profile-placeholder.svg'}
-              alt='profile'
-              className='h-14 w-14 rounded-full'
-            />
-            <div className='flex flex-col'>
-              <p className='body-bold'>{user.name}</p>
-              <p className='small-regular text-light-3'>@{user.username}</p>
-            </div>
-          </Link>
-        )}
-
         <ul className='flex flex-col gap-6'>
           {sidebarLinks.map((link: INavLink) => {
             const isActive = pathname === link.route
@@ -67,6 +49,29 @@ const LeftSidebar = () => {
               </li>
             )
           })}
+
+          {isLoading || !user.email ? (
+            <div className='h-14'>
+              <Loader />
+            </div>
+          ) : (
+            <li
+              className={`leftsidebar-link group ${
+                pathname === `/profile/${user.id}` && 'bg-primary-500'
+              }`}
+            >
+              <NavLink to={`/profile/${user.id}`} className={`flex gap-4 items-center p-4  `}>
+                <img
+                  src={user.imageUrl || '/assets/icons/profile-placeholder.svg'}
+                  alt='profile'
+                  className='h-6 w-6 rounded-full'
+                />
+                <div className='flex flex-col'>
+                  <p className=''>Profile</p>
+                </div>
+              </NavLink>
+            </li>
+          )}
         </ul>
       </div>
 

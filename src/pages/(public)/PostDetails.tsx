@@ -6,7 +6,7 @@ import { GridPostList, PostStats } from '@/components/shared'
 
 import { useGetPostById, useGetUserPosts, useDeletePost } from '@/api'
 import { multiFormatDateString } from '@/lib/utils'
-import { useUserContext } from '@/context/auth'
+import { useUserContext } from '@/lib/context/auth'
 
 const PostDetails = () => {
   const navigate = useNavigate()

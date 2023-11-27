@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { Button } from '../../components/ui/button'
-import { useUserContext } from '@/context/auth'
+import { useUserContext } from '@/lib/context/auth'
 import { useSignOutAccount } from '@/api'
 
 const Topbar = () => {

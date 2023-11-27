@@ -2,7 +2,7 @@ import { Route, Routes, Link, Outlet, useParams, useLocation } from 'react-route
 
 import { Button } from '@/components/ui'
 import LikedPosts from '@/pages/(public)/LikedPosts'
-import { useUserContext } from '@/context/auth'
+import { useUserContext } from '@/lib/context/auth'
 import { useGetUserById } from '@/api'
 import { GridPostList, Loader } from '@/components/shared'
 

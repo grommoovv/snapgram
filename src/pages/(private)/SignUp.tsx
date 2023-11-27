@@ -18,7 +18,7 @@ import { useToast } from '@/components/ui/use-toast'
 
 import { useCreateUserAccount, useSignInAccount } from '@/api'
 import { SignUpValidation } from '@/lib/validation'
-import { useUserContext } from '@/context/auth'
+import { useUserContext } from '@/lib/context/auth'
 
 const SignUp = () => {
   const { toast } = useToast()
