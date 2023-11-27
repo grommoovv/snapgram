@@ -17,7 +17,7 @@ import {
 } from '@/components/ui'
 import { PostValidation } from '@/lib/validation'
 import { useToast } from '@/components/ui/use-toast'
-import { useUserContext } from '@/context/auth'
+import { useUserContext } from '@/lib/context/auth'
 import { FileUploader, Loader } from '@/components/shared'
 import { useCreatePost, useUpdatePost } from '@/api'
 
