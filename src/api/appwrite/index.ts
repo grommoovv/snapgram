@@ -4,6 +4,7 @@ import { ID, Query } from 'appwrite'
 import { appwriteConfig, account, databases, storage, avatars } from './config'
 import { IUpdatePost, INewPost, INewUser, IUpdateUser } from '@/types'
 
+// User / Account 
 export const createUserAccount = async (user: INewUser) => {
   try {
     const newAccount = await account.create(ID.unique(), user.email, user.password, user.name)
@@ -99,6 +100,7 @@ export const signOutAccount = async () => {
   }
 }
 
+// Post
 export const createPost = async (post: INewPost) => {
   try {
     // Upload file to appwrite storage
@@ -142,6 +144,7 @@ export const createPost = async (post: INewPost) => {
   }
 }
 
+// File
 export const uploadFile = async (file: File) => {
   try {
     const uploadedFile = await storage.createFile(appwriteConfig.storageId, ID.unique(), file)
@@ -174,6 +177,7 @@ export const deleteFile = async (fileId: string) => {
   }
 }
 
+// Post
 export const searchPosts = async (searchTerm: string) => {
   try {
     const posts = await databases.listDocuments(
@@ -402,6 +406,7 @@ export const getRecentPosts = async () => {
   }
 }
 
+// User
 export const getUsers = async (limit?: number) => {
   const queries: any[] = [Query.orderDesc('$createdAt')]
 
