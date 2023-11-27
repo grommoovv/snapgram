@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useQuery, useMutation, useQueryClient, useInfiniteQuery } from '@tanstack/react-query'
 
-import { QUERY_KEYS } from '@/constants'
+import { QUERY_KEYS } from '@/lib/constants'
 import {
   createUserAccount,
   signInAccount,
