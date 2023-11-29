@@ -16,6 +16,9 @@
 
 @layer utilities {
   /* TYPOGRAPHY */
+  .title-1 {
+    @apply leading-[100%] tracking-tighter;
+  }
   .h1-bold {
     @apply text-[36px] font-bold leading-[140%] tracking-tighter;
   }
@@ -29,7 +32,7 @@
   }
 
   .h3-bold {
-    @apply text-[24px] font-bold leading-[140%] tracking-tighter;
+    @apply text-[24px] font-bold leading-[100%] tracking-tighter;
   }
 
   .base-semibold {
@@ -37,7 +40,7 @@
   }
 
   .base-medium {
-    @apply text-[16px] font-medium leading-[140%];
+    @apply text-[16px] font-medium leading-[100%];
   }
 
   .base-regular {
@@ -45,11 +48,11 @@
   }
 
   .body-bold {
-    @apply text-[18px] font-bold leading-[140%];
+    @apply text-[18px] font-bold leading-[100%];
   }
 
   .body-medium {
-    @apply text-[18px] font-medium leading-[140%];
+    @apply text-[18px] font-medium leading-[100%];
   }
 
   .small-semibold {
@@ -57,7 +60,7 @@
   }
 
   .small-medium {
-    @apply text-[14px] font-medium leading-[140%];
+    @apply text-[14px] font-medium leading-[100%];
   }
 
   .small-regular {
@@ -115,7 +118,7 @@
 		items-center 
 		gap-10 
 		/* overflow-scroll
-		custom-scrollbar; */
+		custom-scrollbar; */;
   }
 
   /* All Users */
@@ -134,7 +137,7 @@
 		flex-1 
 		items-center 
 		/* overflow-scroll 
-		custom-scrollbar; */
+		custom-scrollbar; */;
   }
 
   .explore-inner_container {
@@ -153,12 +156,14 @@
 		items-center 
 		gap-10 
 		/* overflow-scroll 
-		custom-scrollbar; */
+		custom-scrollbar; */;
   }
 
   /* Page Container */
   .page-container {
-    @apply flex flex-1 h-full py-10 px-20 		
+    @apply flex flex-1 h-full py-10 px-20
+		border-l-[3px]
+		border-[#09090a] 		
 		overflow-scroll 
 		custom-scrollbar;
   }
@@ -199,17 +204,27 @@
 
   /* Profile */
   .profile-container {
-    @apply flex 
+    /* @apply 
+		flex 
 		flex-col 
 		items-center 
 		flex-1 
 		gap-10 
-		/* overflow-scroll 
+		overflow-scroll 
 		custom-scrollbar; */
   }
 
   .profile-inner_container {
-    @apply flex items-center md:mb-8 xl:items-start gap-8 flex-col xl:flex-row relative max-w-5xl w-full;
+    @apply flex 
+		items-center 
+		/* md:mb-8  */
+		xl:items-start 
+		gap-8 
+		flex-col 
+		xl:flex-row 
+		relative 
+		max-w-5xl 
+		w-full;
   }
 
   .profile-tab {
@@ -224,7 +239,7 @@
 		items-center 
 		gap-10 
 		/* overflow-scroll
-		custom-scrollbar; */
+		custom-scrollbar; */;
   }
 
   /* Bottom bar */
@@ -260,7 +275,13 @@
 
   /* Left sidebar */
   .leftsidebar {
-    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
+    @apply hidden 
+		md:flex 
+		px-6 
+		py-10 
+		flex-col 
+		justify-between 
+		min-w-[270px];
   }
 
   .leftsidebar-link {
