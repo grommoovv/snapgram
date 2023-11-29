@@ -1,6 +1,6 @@
 import { Router } from './router'
 import { Toaster } from './components/ui'
-import './globals.css'
+import './styles/globals.css'
 
 const App = () => {
   return (
