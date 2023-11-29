@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { PrivateLayout, PublicLayout } from './layout'
+import { PrivateLayout, PublicLayout } from './components/layout'
 import { SignIn, SignUp } from './pages/(private)'
 import {
   Home,
